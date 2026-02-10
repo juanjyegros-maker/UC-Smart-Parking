@@ -1,0 +1,7 @@
+{
+  "name": "UC Smart Campus",
+  "description": "A high-tech university parking app that uses real-time location and IoT sensors to guide students to the nearest available spot based on their destination pavilion.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
