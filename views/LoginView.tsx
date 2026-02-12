@@ -14,24 +14,24 @@ const LoginView: React.FC<Props> = ({ onLogin }) => {
         </div>
       </div>
 
-      <h1 className="text-3xl font-bold text-center mb-2 tracking-tight">Smart Campus Parking</h1>
-      <p className="text-gray-400 text-center mb-12 text-sm">Sign in to manage your vehicle and IoT sensors</p>
+      <h1 className="text-3xl font-bold text-center mb-2 tracking-tight">Estacionamiento UC</h1>
+      <p className="text-gray-400 text-center mb-12 text-sm">Inicia sesión para gestionar tu vehículo y sensores IoT</p>
 
       <div className="space-y-6">
         <div className="space-y-2">
-          <label className="text-xs font-medium text-gray-500 ml-1">University Email</label>
+          <label className="text-xs font-medium text-gray-500 ml-1">Correo</label>
           <div className="relative group">
             <span className="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-primary">school</span>
             <input 
               type="email" 
-              placeholder="student@university.edu"
+              placeholder="estudiante@universidad.edu"
               className="w-full bg-surface border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <label className="text-xs font-medium text-gray-500 ml-1">Password</label>
+          <label className="text-xs font-medium text-gray-500 ml-1">Contraseña</label>
           <div className="relative group">
             <span className="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-primary">lock</span>
             <input 
@@ -42,7 +42,7 @@ const LoginView: React.FC<Props> = ({ onLogin }) => {
             <span className="material-icons-round absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer">visibility_off</span>
           </div>
           <div className="text-right">
-            <button className="text-xs text-primary font-medium">Forgot Password?</button>
+            <button className="text-xs text-primary font-medium">¿Olvidaste tu contraseña?</button>
           </div>
         </div>
 
@@ -50,14 +50,14 @@ const LoginView: React.FC<Props> = ({ onLogin }) => {
           onClick={onLogin}
           className="w-full bg-primary hover:bg-blue-600 text-white font-bold py-5 rounded-2xl shadow-lg shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
         >
-          Login
+          Iniciar Sesión
           <span className="material-icons-round text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </button>
       </div>
 
       <div className="mt-auto pb-12 text-center">
         <p className="text-gray-400 text-sm">
-          Don't have an account? <button className="text-primary font-bold">Sign Up</button>
+          ¿No tienes una cuenta? <button className="text-primary font-bold">Regístrate</button>
         </p>
       </div>
     </div>

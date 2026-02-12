@@ -9,6 +9,7 @@ export interface Pavilion {
   status: 'LIVE' | 'FULL' | 'BUSY';
   totalSpots: number;
   availableSpots: number;
+  coords?: [number, number]; // [lat, lng]
 }
 
 export interface ParkingSpot {
@@ -20,7 +21,7 @@ export interface ParkingSpot {
   distanceToPavilion: number; // in meters
 }
 
-export type ViewState = 'AUTH' | 'HOME' | 'NAVIGATION' | 'ARRIVAL';
+export type ViewState = 'AUTH' | 'HOME' | 'NAVIGATION' | 'ARRIVAL' | 'MAP';
 
 export interface UserState {
   isDriving: boolean;

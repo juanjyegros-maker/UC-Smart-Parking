@@ -10,7 +10,7 @@ interface Props {
 }
 
 const NavigationView: React.FC<Props> = ({ pavilion, userState, onArrive, onCancel }) => {
-  // Simulate progress
+  // Simular progreso
   const [distance, setDistance] = useState(350);
   const [eta, setEta] = useState(2);
 
@@ -32,7 +32,7 @@ const NavigationView: React.FC<Props> = ({ pavilion, userState, onArrive, onCanc
           </div>
           <div className="flex-1">
             <div className="text-3xl font-bold text-white">{distance} <span className="text-sm font-normal text-gray-400">m</span></div>
-            <div className="text-lg font-medium text-gray-200 leading-tight">Turn Left towards <br/>Section B</div>
+            <div className="text-lg font-medium text-gray-200 leading-tight">Gira a la izquierda hacia <br/>la Sección B</div>
           </div>
         </div>
       </div>
@@ -58,11 +58,11 @@ const NavigationView: React.FC<Props> = ({ pavilion, userState, onArrive, onCanc
         {/* Target Spot Visual */}
         <div className="absolute top-[35%] right-[10%] rotate-3 group">
           <div className="w-24 h-16 bg-primary border-2 border-white rounded-lg shadow-[0_0_20px_#137fec] flex flex-col items-center justify-center">
-            <span className="text-[10px] font-bold text-white/60 mb-1">SPOT B-12</span>
+            <span className="text-[10px] font-bold text-white/60 mb-1">LUGAR B-12</span>
             <span className="material-icons-round text-white">location_on</span>
           </div>
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-primary text-[10px] font-bold px-2 py-0.5 rounded shadow-lg whitespace-nowrap">
-            Closest to {pavilion.name}
+            Más cercano a {pavilion.name}
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ const NavigationView: React.FC<Props> = ({ pavilion, userState, onArrive, onCanc
               <span className="text-lg font-medium text-gray-300 mb-0.5">{distance} m</span>
             </div>
             <div className="text-sm text-gray-400">
-              Arrival at <span className="text-white font-bold">09:44</span>
+              Llegada a las <span className="text-white font-bold">09:44</span>
             </div>
           </div>
           <button 

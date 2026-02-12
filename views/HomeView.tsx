@@ -5,10 +5,11 @@ import { Pavilion, UserState } from '../types';
 
 interface Props {
   onSelect: (p: Pavilion) => void;
+  onGoToMap: () => void;
   userState: UserState;
 }
 
-const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
+const HomeView: React.FC<Props> = ({ onSelect, onGoToMap, userState }) => {
   const [search, setSearch] = useState('');
 
   const filteredPavilions = PAVILIONS.filter(p => 
@@ -20,12 +21,12 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
       {/* Header */}
       <header className="px-6 pt-12 pb-6 flex justify-between items-start">
         <div>
-          <p className="text-sm text-gray-500 font-medium">Good Morning,</p>
-          <h1 className="text-2xl font-bold tracking-tight">Where to park?</h1>
+          <p className="text-sm text-gray-500 font-medium">Buenos Días,</p>
+          <h1 className="text-2xl font-bold tracking-tight">¿Dónde quieres aparcar?</h1>
         </div>
         <div className="relative">
           <div className="w-12 h-12 rounded-full border-2 border-white/10 overflow-hidden ring-2 ring-primary/20">
-            <img src="https://picsum.photos/100/100" alt="Profile" className="w-full h-full object-cover" />
+            <img src="https://picsum.photos/100/100" alt="Perfil" className="w-full h-full object-cover" />
           </div>
           <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-background rounded-full"></div>
         </div>
@@ -39,7 +40,7 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             type="text" 
-            placeholder="Find pavilion, hall, or lot..."
+            placeholder="Buscar pabellón, sala o zona..."
             className="w-full bg-surface border border-white/5 rounded-2xl py-4 pl-12 pr-12 text-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-lg"
           />
           <span className="material-icons-round absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer">tune</span>
@@ -53,9 +54,9 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
             {userState.isDriving ? 'directions_car' : 'directions_walk'}
           </span>
           <div>
-            <p className="text-xs text-gray-400 font-medium leading-none mb-1">Current Mode</p>
+            <p className="text-xs text-gray-400 font-medium leading-none mb-1">Modo Actual</p>
             <p className="text-sm font-bold text-white leading-none">
-              {userState.isDriving ? 'Driving detected' : 'Walking detected'}
+              {userState.isDriving ? 'Conducción detectada' : 'Caminata detectada'}
             </p>
           </div>
         </div>
@@ -63,7 +64,7 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
 
       {/* Main Content */}
       <div className="flex-1 px-6 overflow-y-auto hide-scrollbar pb-32">
-        <h2 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">All Pavilions</h2>
+        <h2 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Todos los Pabellones</h2>
         <div className="grid grid-cols-2 gap-4">
           {filteredPavilions.map(pavilion => (
             <div 
@@ -78,13 +79,13 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
                 {pavilion.status === 'LIVE' && (
                   <div className="flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                    <span className="text-[10px] font-bold text-green-500 uppercase tracking-tighter">Live</span>
+                    <span className="text-[10px] font-bold text-green-500 uppercase tracking-tighter">En Vivo</span>
                   </div>
                 )}
                 {pavilion.status === 'FULL' && (
                   <div className="flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                    <span className="text-[10px] font-bold text-red-500 uppercase tracking-tighter">Full</span>
+                    <span className="text-[10px] font-bold text-red-500 uppercase tracking-tighter">Lleno</span>
                   </div>
                 )}
               </div>
@@ -100,7 +101,7 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
                   <span className={`text-sm font-bold ${pavilion.status === 'FULL' ? 'text-red-500' : 'text-green-500'}`}>
                     {pavilion.availableSpots}
                   </span>
-                  <span className="text-[10px] text-gray-500 font-medium">free</span>
+                  <span className="text-[10px] text-gray-500 font-medium">libre</span>
                 </div>
                 <span className="material-icons-round text-gray-500 text-sm group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_forward</span>
               </div>
@@ -114,11 +115,14 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
         <div className="bg-surface/80 backdrop-blur-xl border border-white/5 rounded-3xl p-2 flex justify-between items-center shadow-2xl">
           <button className="flex-1 flex flex-col items-center justify-center gap-1 py-2 text-primary">
             <span className="material-icons-round">home</span>
-            <span className="text-[10px] font-medium">Home</span>
+            <span className="text-[10px] font-medium">Inicio</span>
           </button>
-          <button className="flex-1 flex flex-col items-center justify-center gap-1 py-2 text-gray-500">
+          <button 
+            onClick={onGoToMap}
+            className="flex-1 flex flex-col items-center justify-center gap-1 py-2 text-gray-500 hover:text-primary transition-colors"
+          >
             <span className="material-icons-round">map</span>
-            <span className="text-[10px] font-medium">Map</span>
+            <span className="text-[10px] font-medium">Mapa</span>
           </button>
           <div className="flex-none -mt-10 px-2">
             <button className="w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center active:scale-90 transition-transform">
@@ -127,11 +131,11 @@ const HomeView: React.FC<Props> = ({ onSelect, userState }) => {
           </div>
           <button className="flex-1 flex flex-col items-center justify-center gap-1 py-2 text-gray-500">
             <span className="material-icons-round">bookmark</span>
-            <span className="text-[10px] font-medium">Saved</span>
+            <span className="text-[10px] font-medium">Guardados</span>
           </button>
           <button className="flex-1 flex flex-col items-center justify-center gap-1 py-2 text-gray-500">
             <span className="material-icons-round">settings</span>
-            <span className="text-[10px] font-medium">Settings</span>
+            <span className="text-[10px] font-medium">Ajustes</span>
           </button>
         </div>
       </div>

@@ -4,68 +4,74 @@ import { Pavilion } from './types';
 export const PAVILIONS: Pavilion[] = [
   {
     id: 'p1',
-    name: 'Engineering',
-    locationName: 'North Campus',
-    zone: 'Zone A',
+    name: 'Ingeniería',
+    locationName: 'Campus Norte',
+    zone: 'Zona A',
     icon: 'engineering',
     colorClass: 'text-blue-400',
     status: 'LIVE',
     totalSpots: 150,
-    availableSpots: 124
+    availableSpots: 124,
+    coords: [-12.046374, -77.042793]
   },
   {
     id: 'p2',
-    name: 'Humanities',
-    locationName: 'South Wing',
-    zone: 'Zone C',
+    name: 'Humanidades',
+    locationName: 'Ala Sur',
+    zone: 'Zona C',
     icon: 'theater_comedy',
     colorClass: 'text-purple-400',
     status: 'BUSY',
     totalSpots: 100,
-    availableSpots: 14
+    availableSpots: 14,
+    coords: [-12.047500, -77.043500]
   },
   {
     id: 'p3',
-    name: 'Science Labs',
-    locationName: 'East Campus',
-    zone: 'Zone B',
+    name: 'Laboratorios',
+    locationName: 'Campus Este',
+    zone: 'Zona B',
     icon: 'biotech',
     colorClass: 'text-teal-400',
     status: 'LIVE',
     totalSpots: 120,
-    availableSpots: 86
+    availableSpots: 86,
+    coords: [-12.045500, -77.041000]
   },
   {
     id: 'p4',
-    name: 'Sports Center',
-    locationName: 'Main Arena',
-    zone: 'Zone S',
+    name: 'Centro Deportivo',
+    locationName: 'Arena Principal',
+    zone: 'Zona S',
     icon: 'pool',
     colorClass: 'text-red-400',
     status: 'FULL',
     totalSpots: 80,
-    availableSpots: 0
+    availableSpots: 0,
+    coords: [-12.048000, -77.045000]
   },
   {
     id: 'p5',
-    name: 'Library',
-    locationName: 'Central',
-    zone: 'Zone L',
+    name: 'Biblioteca',
+    locationName: 'Sector Central',
+    zone: 'Zona L',
     icon: 'local_library',
     colorClass: 'text-indigo-400',
     status: 'BUSY',
     totalSpots: 60,
-    availableSpots: 32
+    availableSpots: 32,
+    coords: [-12.046500, -77.043000]
   },
   {
     id: 'p6',
-    name: 'Admin Hall',
-    locationName: 'West Wing',
-    zone: 'Zone D',
+    name: 'Administración',
+    locationName: 'Ala Oeste',
+    zone: 'Zona D',
     icon: 'admin_panel_settings',
     colorClass: 'text-gray-400',
     status: 'LIVE',
     totalSpots: 250,
-    availableSpots: 205
+    availableSpots: 205,
+    coords: [-12.046000, -77.044000]
   }
 ];

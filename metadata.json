@@ -1,6 +1,6 @@
 {
-  "name": "UC Smart Campus",
-  "description": "A high-tech university parking app that uses real-time location and IoT sensors to guide students to the nearest available spot based on their destination pavilion.",
+  "name": "UC Estacionamiento Inteligente",
+  "description": "Una aplicación de estacionamiento de alta tecnología que utiliza ubicación en tiempo real y sensores IoT para guiar a los estudiantes al lugar disponible más cercano según su pabellón de destino.",
   "requestFramePermissions": [
     "geolocation"
   ]
