@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PAVILIONS } from '../constants';
 import { Pavilion, UserState } from '../types';
 
@@ -11,6 +11,14 @@ interface Props {
 
 const HomeView: React.FC<Props> = ({ onSelect, onGoToMap, userState }) => {
   const [search, setSearch] = useState('');
+  const [greeting, setGreeting] = useState('');
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) setGreeting('Buenos Días,');
+    else if (hour >= 12 && hour < 19) setGreeting('Buenas Tardes,');
+    else setGreeting('Buenas Noches,');
+  }, []);
 
   const filteredPavilions = PAVILIONS.filter(p => 
     p.name.toLowerCase().includes(search.toLowerCase())
@@ -21,7 +29,7 @@ const HomeView: React.FC<Props> = ({ onSelect, onGoToMap, userState }) => {
       {/* Header */}
       <header className="px-6 pt-12 pb-6 flex justify-between items-start">
         <div>
-          <p className="text-sm text-gray-500 font-medium">Buenos Días,</p>
+          <p className="text-sm text-gray-500 font-medium">{greeting}</p>
           <h1 className="text-2xl font-bold tracking-tight">¿Dónde quieres aparcar?</h1>
         </div>
         <div className="relative">
