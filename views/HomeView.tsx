@@ -30,7 +30,7 @@ const HomeView: React.FC<Props> = ({ onSelect, onGoToMap, userState }) => {
       <header className="px-6 pt-12 pb-6 flex justify-between items-start">
         <div>
           <p className="text-sm text-gray-500 font-medium">{greeting}</p>
-          <h1 className="text-2xl font-bold tracking-tight">¿Dónde quieres aparcar?</h1>
+          <h1 className="text-2xl font-bold tracking-tight">¿Dónde querés estacionar?</h1>
         </div>
         <div className="relative">
           <div className="w-12 h-12 rounded-full border-2 border-white/10 overflow-hidden ring-2 ring-primary/20">
